@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Shortcuts Guide - Complete Documentation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: #f5f5f7;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        header {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .sidebar {
+            background: #fafafa;
+            padding: 30px 20px;
+            border-right: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+        }
+
+        .sidebar nav li {
+            margin: 8px 0;
+        }
+
+        .sidebar nav a {
+            text-decoration: none;
+            color: #0066cc;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .sidebar nav a:hover {
+            background: #e5e5e5;
+            color: #004499;
+        }
+
+        main {
+            padding: 50px;
+            max-width: 900px;
+        }
+
+        article {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        article:last-child {
+            border-bottom: none;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #1d1d1f;
+            margin: 40px 0 20px 0;
+            font-weight: 700;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #1d1d1f;
+            margin: 35px 0 20px 0;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            color: #555;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 15px 0;
+            line-height: 1.8;
+            color: #424245;
+        }
+
+        ul, ol {
+            margin: 20px 0;
+            padding-left: 35px;
+        }
+
+        li {
+            margin: 10px 0;
+            line-height: 1.7;
+        }
+
+        code {
+            background: #f4f4f6;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+            color: #d12953;
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 25px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #004499;
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #666;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #e5e5e5;
+        }
+
+        th {
+            background: #f8f8f8;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        tr:hover {
+            background: #fafafa;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .tip {
+            background: #d1ecf1;
+            border-left: 4px solid #0066cc;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .warning {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        footer {
+            grid-column: 1 / -1;
+            background: #1d1d1f;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #667eea;
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #e5e5e5;
+            }
+
+            main {
+                padding: 30px 20px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+        }
+
+        @media print {
+            .sidebar {
+                display: none;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                box-shadow: none;
+            }
+
+            main {
+                padding: 20px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        article {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 Apple Shortcuts Guide</h1>
+            <p>Complete Documentation - iOS & iPadOS</p>
+            <small>Source: <a href="https://support.apple.com/guide/shortcuts/welcome/ios" style="color: white; text-decoration: underline;">support.apple.com</a></small>
+        </header>
+
+        <aside class="sidebar">
+            <h2>📚 Table of Contents</h2>
+            <nav>
+                <ul>
+                    <li><a href="#welcome">Welcome to Shortcuts</a></li>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#create-shortcut">Create a Shortcut</a></li>
+                    <li><a href="#run-shortcuts">Run Your Shortcuts</a></li>
+                    <li><a href="#manage-shortcuts">Manage Shortcuts</a></li>
+                    <li><a href="#personal-automation">Personal Automation</a></li>
+                    <li><a href="#advanced-features">Advanced Features</a></li>
+                    <li><a href="#sharing">Share Shortcuts</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <article id="welcome">
+                <h1>Welcome to Apple Shortcuts</h1>
+                <p>Shortcuts is a powerful automation app for iOS and iPadOS that lets you create custom workflows to streamline your daily tasks. With Shortcuts, you can automate actions across multiple apps with just a tap or by using Siri.</p>
+
+                <div class="tip">
+                    <strong>💡 Tip:</strong> This HTML file is a template. To get the complete Apple Shortcuts Guide, you'll need to manually copy content from Apple's official documentation at <a href="https://support.apple.com/guide/shortcuts/welcome/ios">support.apple.com/guide/shortcuts/welcome/ios</a>
+                </div>
+
+                <h3>What You Can Do with Shortcuts</h3>
+                <ul>
+                    <li>Automate everyday tasks like sending messages, playing music, or getting directions</li>
+                    <li>Create custom workflows that work across multiple apps</li>
+                    <li>Use Siri to run shortcuts with your voice</li>
+                    <li>Set up automations that trigger based on time, location, or other conditions</li>
+                    <li>Share shortcuts with friends and family</li>
+                </ul>
+            </article>
+
+            <article id="getting-started">
+                <h2>Getting Started with Shortcuts</h2>
+
+                <h3>Opening the Shortcuts App</h3>
+                <p>The Shortcuts app comes pre-installed on iOS 13 and later. To open it:</p>
+                <ol>
+                    <li>Find the Shortcuts app on your Home Screen (it has a white icon with colorful squares)</li>
+                    <li>Tap to open the app</li>
+                    <li>You'll see the Gallery tab with pre-made shortcuts you can add</li>
+                </ol>
+
+                <h3>Your First Shortcut</h3>
+                <p>The easiest way to get started is by adding a shortcut from the Gallery:</p>
+                <ol>
+                    <li>Open the Shortcuts app</li>
+                    <li>Tap the <strong>Gallery</strong> tab at the bottom</li>
+                    <li>Browse through the available shortcuts</li>
+                    <li>Tap <strong>Add Shortcut</strong> on one that interests you</li>
+                    <li>The shortcut is now in your <strong>My Shortcuts</strong> tab</li>
+                </ol>
+            </article>
+
+            <article id="create-shortcut">
+                <h2>Create a New Shortcut</h2>
+
+                <h3>Building Your First Custom Shortcut</h3>
+                <p>Creating your own shortcut is simple:</p>
+                <ol>
+                    <li>Open the Shortcuts app</li>
+                    <li>Tap the <strong>My Shortcuts</strong> tab</li>
+                    <li>Tap the <strong>+</strong> button in the top right</li>
+                    <li>Tap <strong>Add Action</strong></li>
+                    <li>Search for or browse actions you want to include</li>
+                    <li>Tap actions to add them to your shortcut</li>
+                    <li>Arrange actions in the order you want them to run</li>
+                    <li>Tap <strong>Done</strong> when finished</li>
+                </ol>
+
+                <h3>Understanding Actions</h3>
+                <p>Actions are the building blocks of shortcuts. Each action performs a specific task, such as:</p>
+                <ul>
+                    <li><strong>Get Current Weather</strong> - Retrieves weather information</li>
+                    <li><strong>Send Message</strong> - Sends a text message</li>
+                    <li><strong>Play Music</strong> - Plays music from Apple Music</li>
+                    <li><strong>Get Directions</strong> - Opens Maps with directions</li>
+                    <li><strong>Set Timer</strong> - Creates a timer</li>
+                </ul>
+
+                <div class="note">
+                    <strong>📝 Note:</strong> Actions can pass data to each other. The output of one action can become the input for the next action in your shortcut.
+                </div>
+            </article>
+
+            <article id="run-shortcuts">
+                <h2>Running Your Shortcuts</h2>
+
+                <h3>Ways to Run a Shortcut</h3>
+                <p>There are several ways to run your shortcuts:</p>
+
+                <h4>1. From the Shortcuts App</h4>
+                <p>Simply tap the shortcut in your My Shortcuts tab.</p>
+
+                <h4>2. Using Siri</h4>
+                <p>You can run any shortcut by asking Siri. Just say "Hey Siri" followed by the name of your shortcut.</p>
+
+                <h4>3. From the Home Screen</h4>
+                <p>Add shortcuts to your Home Screen for quick access:</p>
+                <ol>
+                    <li>Open the Shortcuts app</li>
+                    <li>Long-press on a shortcut</li>
+                    <li>Tap <strong>Share</strong></li>
+                    <li>Tap <strong>Add to Home Screen</strong></li>
+                    <li>Customize the name and icon if desired</li>
+                    <li>Tap <strong>Add</strong></li>
+                </ol>
+
+                <h4>4. From the Share Sheet</h4>
+                <p>Some shortcuts can run from the Share Sheet in other apps.</p>
+
+                <h4>5. Using Widgets</h4>
+                <p>Add a Shortcuts widget to your Home Screen or Today View for quick access to your favorite shortcuts.</p>
+            </article>
+
+            <article id="manage-shortcuts">
+                <h2>Managing Your Shortcuts</h2>
+
+                <h3>Organizing Shortcuts</h3>
+                <p>Keep your shortcuts organized with folders:</p>
+                <ul>
+                    <li>Long-press on a shortcut to move it</li>
+                    <li>Create folders to group related shortcuts</li>
+                    <li>Rename shortcuts to make them easier to find</li>
+                    <li>Delete shortcuts you no longer need</li>
+                </ul>
+
+                <h3>Editing Existing Shortcuts</h3>
+                <p>To modify a shortcut:</p>
+                <ol>
+                    <li>Tap the shortcut you want to edit</li>
+                    <li>Tap the <strong>•••</strong> menu button</li>
+                    <li>Make your changes</li>
+                    <li>Tap <strong>Done</strong></li>
+                </ol>
+            </article>
+
+            <article id="personal-automation">
+                <h2>Personal Automations</h2>
+
+                <h3>What are Automations?</h3>
+                <p>Automations let you run shortcuts automatically based on triggers like:</p>
+                <ul>
+                    <li><strong>Time of Day</strong> - Run shortcuts at specific times</li>
+                    <li><strong>Alarm</strong> - Trigger when you stop an alarm</li>
+                    <li><strong>Arrive/Leave</strong> - Based on your location</li>
+                    <li><strong>Before I Commute</strong> - Before you head to work or home</li>
+                    <li><strong>Email</strong> - When you receive email from specific people</li>
+                    <li><strong>App</strong> - When you open or close specific apps</li>
+                    <li><strong>Airplane Mode</strong> - When you turn airplane mode on/off</li>
+                    <li><strong>Do Not Disturb</strong> - When DND changes</li>
+                </ul>
+
+                <h3>Creating an Automation</h3>
+                <ol>
+                    <li>Open the Shortcuts app</li>
+                    <li>Tap the <strong>Automation</strong> tab</li>
+                    <li>Tap <strong>+</strong> to create a new automation</li>
+                    <li>Choose a trigger (when you want it to run)</li>
+                    <li>Configure the trigger conditions</li>
+                    <li>Tap <strong>Next</strong></li>
+                    <li>Add actions for what you want to happen</li>
+                    <li>Choose whether to run automatically or ask before running</li>
+                    <li>Tap <strong>Done</strong></li>
+                </ol>
+
+                <div class="warning">
+                    <strong>⚠️ Warning:</strong> Be careful with automations that run without asking. Make sure they won't cause unintended consequences.
+                </div>
+            </article>
+
+            <article id="advanced-features">
+                <h2>Advanced Features</h2>
+
+                <h3>Variables and Magic Variables</h3>
+                <p>Variables let you store and reuse information in your shortcuts:</p>
+                <ul>
+                    <li>Use <strong>Set Variable</strong> to store a value</li>
+                    <li>Use <strong>Get Variable</strong> to retrieve the value later</li>
+                    <li><strong>Magic Variables</strong> automatically store output from actions</li>
+                </ul>
+
+                <h3>Conditional Logic</h3>
+                <p>Add decision-making to your shortcuts with <strong>If</strong> statements:</p>
+                <ul>
+                    <li>Run different actions based on conditions</li>
+                    <li>Create more intelligent, adaptive shortcuts</li>
+                    <li>Handle different scenarios automatically</li>
+                </ul>
+
+                <h3>Repeat Actions</h3>
+                <p>Use <strong>Repeat</strong> actions to run the same actions multiple times:</p>
+                <ul>
+                    <li><strong>Repeat</strong> - Run actions a specific number of times</li>
+                    <li><strong>Repeat with Each</strong> - Run actions for each item in a list</li>
+                </ul>
+
+                <h3>Scripting</h3>
+                <p>For advanced users, shortcuts support:</p>
+                <ul>
+                    <li>JavaScript code</li>
+                    <li>Shell scripts (on Mac)</li>
+                    <li>Python scripts (on Mac)</li>
+                    <li>Dictionary and JSON manipulation</li>
+                    <li>Regular expressions</li>
+                </ul>
+            </article>
+
+            <article id="sharing">
+                <h2>Sharing Shortcuts</h2>
+
+                <h3>Share Your Shortcuts</h3>
+                <p>You can share shortcuts with others:</p>
+                <ol>
+                    <li>Open the shortcut you want to share</li>
+                    <li>Tap the <strong>Share</strong> button</li>
+                    <li>Choose how to share (Messages, AirDrop, etc.)</li>
+                    <li>The recipient can add it to their library</li>
+                </ol>
+
+                <h3>iCloud Link</h3>
+                <p>Create an iCloud link to share shortcuts publicly:</p>
+                <ol>
+                    <li>Tap the <strong>Share</strong> button on a shortcut</li>
+                    <li>Tap <strong>Copy iCloud Link</strong></li>
+                    <li>Share the link anywhere (social media, website, etc.)</li>
+                </ol>
+
+                <div class="note">
+                    <strong>📝 Note:</strong> When someone downloads your shortcut, they'll see which actions it contains and can review it before adding it to their library.
+                </div>
+            </article>
+
+            <article id="troubleshooting">
+                <h2>Troubleshooting</h2>
+
+                <h3>Common Issues and Solutions</h3>
+
+                <h4>Shortcut Won't Run</h4>
+                <ul>
+                    <li>Check that all required permissions are granted</li>
+                    <li>Make sure the actions are in the correct order</li>
+                    <li>Verify that actions have valid inputs</li>
+                    <li>Check for any error messages</li>
+                </ul>
+
+                <h4>Automation Not Triggering</h4>
+                <ul>
+                    <li>Verify the automation is enabled</li>
+                    <li>Check location permissions (for location-based automations)</li>
+                    <li>Ensure Low Power Mode isn't preventing background triggers</li>
+                    <li>Check that the trigger conditions are met</li>
+                </ul>
+
+                <h4>Siri Can't Find Shortcut</h4>
+                <ul>
+                    <li>Make sure the shortcut name is unique and easy to pronounce</li>
+                    <li>Try re-adding the Siri phrase</li>
+                    <li>Check that Siri has permission to access Shortcuts</li>
+                </ul>
+
+                <h4>Action Not Working</h4>
+                <ul>
+                    <li>Check that the app the action uses is installed</li>
+                    <li>Verify app permissions are granted</li>
+                    <li>Update to the latest version of the app</li>
+                    <li>Try recreating the action</li>
+                </ul>
+
+                <h3>Getting Help</h3>
+                <p>If you need more help:</p>
+                <ul>
+                    <li>Visit <a href="https://support.apple.com/guide/shortcuts/welcome/ios">Apple's official Shortcuts guide</a></li>
+                    <li>Check the <a href="https://www.reddit.com/r/shortcuts/">r/shortcuts subreddit</a></li>
+                    <li>Browse the <a href="https://www.icloud.com/shortcuts/">Shortcuts Gallery</a></li>
+                    <li>Contact Apple Support</li>
+                </ul>
+            </article>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Apple Shortcuts Guide - Template Version</p>
+            <p>For complete and official documentation, visit <a href="https://support.apple.com/guide/shortcuts/welcome/ios">support.apple.com</a></p>
+            <p style="margin-top: 15px; opacity: 0.8;">Created with iShortcuts - <a href="https://github.com/rajmahavir/iShortcuts">GitHub Repository</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active section in navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('article');
+            const navLinks = document.querySelectorAll('.sidebar nav a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.fontWeight = 'normal';
+                link.style.background = 'none';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.fontWeight = 'bold';
+                    link.style.background = '#e5e5e5';
+                }
+            });
+        });
+
+        // Print functionality
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
